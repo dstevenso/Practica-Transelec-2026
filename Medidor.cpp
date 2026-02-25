@@ -66,7 +66,6 @@ void enviarDatos() {
         http.addHeader("Content-Type", "application/octet-stream");
 
         Serial.println("Subiendo ráfaga binaria...");
-        // Enviamos los datos crudos (mucho más rápido que JSON)
         int httpCode = http.POST((uint8_t*)sampleBuffer, NUM_SAMPLES * sizeof(uint16_t));
         
         if (httpCode > 0) Serial.printf("Enviado con éxito: %d\n", httpCode);
